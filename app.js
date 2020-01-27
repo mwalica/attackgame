@@ -4,11 +4,10 @@ let attackCpu = 10;
 const progressBarPlayer = document.querySelector("#progress-bar-player");
 const progressBarCpu = document.querySelector("#progress-bar-cpu");
 const btnAttack = document.querySelector("#btn-attack");
-const btnEasy = document.querySelector("#btn-easy");
-const btnNormal = document.querySelector("#btn-normal");
-const btnHard = document.querySelector("#btn-hard");
+const btnClose = document.querySelector("#btn-close");
 
 const backdrop = document.querySelector(".backdrop");
+const popupContent = document.createElement("div");
 
 const maxValue = 100;
 const startValue = 100;
@@ -20,11 +19,16 @@ progressBarCpu.max = maxValue;
 progressBarCpu.value = startValue;
 
 const renderAlert = winer => {
-  const popupContent = document.createElement("div");
   popupContent.className = "popup-content";
-  popupContent.innerHTML = `${winer} zwyciężył`;
+  popupContent.innerHTML = winer;
   const popup = document.querySelector(".popup");
   popup.prepend(popupContent);
+};
+
+const closeAlert = () => {
+  progressBarPlayer.value = startValue;
+  progressBarCpu.value = startValue;
+  backdrop.style.display = "none";
 };
 
 const attackFunc = (player, cpu) => {
@@ -35,13 +39,13 @@ const attackFunc = (player, cpu) => {
   progressBarCpu.value -= damageCpu;
 
   if (progressBarPlayer.value <= 0 && progressBarCpu.value > 0) {
-    renderAlert("Komputer");
+    renderAlert("Computer win!");
     backdrop.style.display = "block";
-  } else if(progressBarCpu.value <= 0 && progressBarPlayer.value > 0) {
-    renderAlert("Gracz");
+  } else if (progressBarCpu.value <= 0 && progressBarPlayer.value > 0) {
+    renderAlert("You win!");
     backdrop.style.display = "block";
-  } else if(progressBarCpu.value <= 0 && progressBarPlayer.value <= 0){
-    renderAlert("Remis");
+  } else if (progressBarCpu.value <= 0 && progressBarPlayer.value <= 0) {
+    renderAlert("Draw - no winner");
     backdrop.style.display = "block";
   }
 };
@@ -49,3 +53,4 @@ const attackFunc = (player, cpu) => {
 console.log(progressBarPlayer.value);
 
 btnAttack.addEventListener("click", () => attackFunc(ATTACK_VALUE, attackCpu));
+btnClose.addEventListener("click", closeAlert);

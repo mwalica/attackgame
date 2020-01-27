@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #efefef;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  .backdrop {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: none;
+    .popup {
+      position: relative;
+      max-width: 800px;
+      margin: 10% auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      &-content {
+        text-align: center;
+        padding: 2rem;
+        font-size: 2rem;
+      }
+      .btn {
+        background-color: #2f9a4d;
+        width: 50%;
+        color: rgba(255, 255, 255, 0.95);
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 1.5rem;
+        border: none;
+        border-radius: 24px;
+        padding: 8px 26px;
+        margin: 1rem auto;
+        cursor: pointer;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 50%;
+    height: 50%;
+    border-radius: 12px;
+    .field {
+      margin: 1rem 0;
+      padding: 1rem;
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .btn {
+        background-color: #ff5789;
+        font-family: 'Montserrat', sans-serif;
+        color: rgba(255, 255, 255, 0.95);
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        border: none;
+        border-radius: 24px;
+        padding: 8px 26px;
+        cursor: pointer;
+        &:focus {
+          outline: none;
+        }
+      }
+      label {
+        display: block;
+        text-align: center;
+      }
+      progress {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 30px;
+      }
+
+      progress[value]::-webkit-progress-bar,
+      progress[value] {
+        background-color: #eee;
+      }
+
+      progress[value]::-webkit-progress-value {
+        background-color: #75b800;
+        transition: all 0.2s ease-out;
+      }
+
+      progress[value]::-moz-progress-bar {
+        background-color: #75b800;
+        transition: all 0.2s ease-out;
+      }
+    }
+  }
+}

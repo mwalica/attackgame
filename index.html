@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+    <title>Easy Game!!!</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="backdrop">
+        <div class="popup">
+          <div class="popup-btn">
+            <div class="btn">Close</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="field">
+          <label for="progress-bar-player">JO</label>
+          <progress id="progress-bar-player" value="100" max="100"></progress>
+        </div>
+        <div class="field">
+          <label for="progress-bar-cpu">CPU</label>
+          <progress id="progress-bar-cpu" value="100" max="100"></progress>
+        </div>
+        <div class="field">
+          <button class="btn" id="btn-attack">Attack</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

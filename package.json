@@ -1,0 +1,14 @@
+{
+  "name": "example_attack_game",
+  "version": "1.0.0",
+  "description": "Easy game",
+  "main": "index.html",
+  "scripts": {
+    "sass": "node-sass style.scss style.css -w"
+  },
+  "author": "Marek Walica",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.13.0"
+  }
+}
